@@ -1,8 +1,21 @@
 // This is our main function
 function fizzbuzz() {
-    console.log("Hello, World!");
+    for( let int = 1; int <= 100; int++){
+        var output = new String();
+        if(int%3 == 0){
+            output = output + "Fizz"
+        }
+        if(int%5 == 0){
+            output = output + "Buzz"
+        }
+        if(output==""){
+            console.log(int)
+        }
+        else{
+            console.log(output)
+        }
 
-    // Put your code here...
+    }
 
 }
 
