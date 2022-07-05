@@ -1,26 +1,42 @@
 // This is our main function
 function fizzbuzz() {
-    for( let int = 1; int <= 105; int++){
-        var output = new String();
+    for( let int = 0; int <= 143; int = int+1){
+        var output = new Array();
         //Work out what to output
         if(int%3 == 0){
-            output = output + "Fizz"
+            output.push("Fizz");
         }
         if(int%5 == 0){
-            output = output + "Buzz"
+            output.push("Buzz");
         }
         if(int%7 == 0){
-            output = output + "Bang"
+            output.push("Bang");
         }
         if(int %11 == 0){
-            output = "Bong"
+            output = ["Bong"];
+        }
+        if (int%13 ==0){
+            len = output.length;
+            firstB = len;
+            //Find the first occurance of B
+            for (let i = 0; i<len; i++){
+                if(output[i].charAt(0)=="B"){
+                    firstB = i
+                    break
+                }
+            }
+            //Insert Fezz into middle of array
+            a = output.slice(0,firstB);
+            a.push("Fezz");
+            b = output.slice(firstB,len);
+            output = a.concat(b);
         }
         //Output
-        if(output==""){
-            console.log(int)
+        if(output.length === 0){
+            console.log(int);
         }
         else{
-            console.log(output)
+            console.log(output.join(""));
         }
     }
 }
