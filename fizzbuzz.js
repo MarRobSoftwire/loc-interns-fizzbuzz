@@ -1,6 +1,8 @@
 // This is our main function
 function fizzbuzz() {
-    for( let int = 0; int <= 255; int = int+1){
+    const prompt = require("prompt-sync")();
+    max = prompt("Enter a maximum value: ", "100");
+    for( let int = 0; int <= max; int = int+1){
         var output = new Array();
         //Work out what to output
         if(int%3 == 0){
@@ -34,7 +36,7 @@ function fizzbuzz() {
         if(int%17 == 0){
             output = output.reverse();
         }
-        
+
         //Output
         if(output.length === 0){
             console.log(int);
