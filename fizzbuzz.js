@@ -1,6 +1,6 @@
 // This is our main function
 function fizzbuzz() {
-    for( let int = 0; int <= 143; int = int+1){
+    for( let int = 0; int <= 255; int = int+1){
         var output = new Array();
         //Work out what to output
         if(int%3 == 0){
@@ -31,6 +31,10 @@ function fizzbuzz() {
             b = output.slice(firstB,len);
             output = a.concat(b);
         }
+        if(int%17 == 0){
+            output = output.reverse();
+        }
+        
         //Output
         if(output.length === 0){
             console.log(int);
